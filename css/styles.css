@@ -1,0 +1,158 @@
+body {
+    background-color: #fcf9f4;
+    background-image: url(images/bg.png);
+    background-attachment: scroll;
+    color: #333; 
+    font-family: 'Lora', 'Merriweather';
+    text-shadow: 1px 1px 2px white;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    background-color: #fef6f0;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+nav a {
+    color: #264d6d;
+    margin: 0px 15px;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 8px 12px;
+}
+
+nav a:hover {
+    color: lightgray;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.heads2 {
+    color: #9E1B32;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.orderofimages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.listofimages {
+    text-align: center; 
+}
+
+img {
+    height: 400px;
+    width: 500px;
+}
+
+#listofplaces{
+    font-style: italic;
+    list-style-image: url(images/list_icon.png);
+}
+
+header { 
+    font-weight: bold;
+    color: #9E1B32;
+}
+
+footer {
+    color: #9E1B32;
+    opacity: 70%;
+    background-color: #9cbad3;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr fr;
+        grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+        gap: 15px;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    nav li {
+        display: block;
+        margin: 0;
+    }
+
+    .orderofimages {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5%;
+    }
+
+    img {
+        grid-template-columns: repeat(2, 1fr);
+        width: 400px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    body {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "nav main aside"
+            "footer footer footer";
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .orderofimages {
+        gap: 3%;
+    }
+}
